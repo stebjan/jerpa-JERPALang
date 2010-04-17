@@ -6,8 +6,8 @@ import java.util.Properties;
 /**
  * 
  * 
- * @author Vaclav Souhrada (v.souhrada@gmail.com)
- * @version 0.1.1 (1/31/2010)
+ * @author Vaclav Souhrada (v.souhrada at gmail.com)
+ * @version 0.1.2 (4/17/2010)
  * @since 0.1.0 (09/15/09)
  */
 public class LangUtils {
@@ -16,6 +16,8 @@ public class LangUtils {
 	public static final String JERPA_LANG_FILE = "ch/ethz/origo/jerpa/jerpalang/JERPA_LANGUAGE.properties";
 	
 	public static final String SIGNAL_PERSP_LANG_FILE_KEY = "perspective.signalprocessing.lang"; 
+	
+	public static final String JERPA_ERROR_LIST_PATH = "ch.ethz.origo.jerpa.jerpalang.jerpa-errors";
 
 	public static String[] getListOfLanguage() {
 		return LangUtils.loadProperties(LangUtils.MAIN_FILE_PATH).getProperty(
