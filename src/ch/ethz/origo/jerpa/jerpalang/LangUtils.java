@@ -27,7 +27,8 @@ import java.io.IOException;
 import java.util.Properties;
 
 /**
- * 
+ * Contains many of methods for work with language. Next contains important language 
+ * constants.
  * 
  * @author Vaclav Souhrada (v.souhrada at gmail.com)
  * @version 0.1.2 (4/17/2010)
@@ -35,13 +36,19 @@ import java.util.Properties;
  */
 public class LangUtils {
 
+	/** PATH to the main package where are language files saved */
 	public static final String MAIN_FILE_PATH = "ch.ethz.origo.jerpa.jerpalang.JERPA";
+	/** Path to the main Language properties file */
 	public static final String JERPA_LANG_FILE = "ch/ethz/origo/jerpa/jerpalang/JERPA_LANGUAGE.properties";
-	
+	/** Path for perspective Signal Processing */
 	public static final String SIGNAL_PERSP_LANG_FILE_KEY = "perspective.signalprocessing.lang"; 
-	
+	/** Path to the JERPA errors files */
 	public static final String JERPA_ERROR_LIST_PATH = "ch.ethz.origo.jerpa.jerpalang.jerpa-errors";
 
+	/**
+	 * Return list of the supported languages
+	 * @return list of the supported languages
+	 */
 	public static String[] getListOfLanguage() {
 		return LangUtils.loadProperties(LangUtils.MAIN_FILE_PATH).getProperty(
 				"menu.language.item").trim().split(",");
@@ -50,7 +57,7 @@ public class LangUtils {
 	/**
 	 * Load properties
 	 * 
-	 * @throws PropertiesException
+	 * @throws PropertiesException properties can not be loaded or not found
 	 * @version 0.1.0
 	 * @since 0.1.0
 	 */
@@ -64,11 +71,19 @@ public class LangUtils {
 		return properties;
 	}
 	
-	
+		/**
+		 * Return property from the main Language properties file by given name
+		 * @param propertyName name of property - name of key
+		 * @return property from the main Language properties file by given name
+		 */
 	public static String getPerspectiveLangPathProp(String propertyName) {
 		return LangUtils.loadProperties(LangUtils.JERPA_LANG_FILE).getProperty(propertyName);
 	}
 	
+	/**
+	 * Only for testing this class
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		System.out.println(getPerspectiveLangPathProp("perspective.signalprocessing.lang"));
 	}
